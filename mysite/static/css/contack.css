@@ -1,0 +1,40 @@
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #333;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    .contact-info {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .contact-info p {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .contact-info a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+    
+    footer {
+        background-color: #f1f1f1;
+        padding: 20px;
+        text-align: center;
+        color: #777;
+        font-size: 14px;
+    }
+</style>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>입력창</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+  <h1>걷좋날</h1>
+  <h2>사용자의 현재 위치</h2>
+  <hr>
+    <p>현재 위치 : {{loca3}}</p>
+    <p>현재 날씨 : {{weat3}}</p>
+    <p>현재 기온 : {{temp3}}</p>
+    <p>현재 대기 : {{air3}}</p>
+  <form action="/pybo/info" method="get">
+    {% csrf_token %}
+    <div>
+
+    </div>
+    <br>
+    <input type="submit" value="Next">
+  </form>
+</body>
+</html>

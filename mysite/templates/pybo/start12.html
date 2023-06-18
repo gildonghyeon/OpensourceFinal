@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1>{{ current_number }}</h1>
+  <form id="increaseForm" method="post" action="/pybo/start/">
+    {% csrf_token %}
+    <button id="increaseButton" type="submit">숫자 증가</button>
+  </form>
+  <script>
+    $(document).ready(function() {
+      // 버튼 클릭 시 작동 및 비활성화
+      $('#increaseForm').submit(function(e) {
+
+        $('#increaseButton').attr('disabled', 'disabled'); // 버튼 비활성화
+      });
+    });
+  </script>
+</body>
+</html>

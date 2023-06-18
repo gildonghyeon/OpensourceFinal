@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단데기</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        p {
+            color: #555;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .bug-image {
+            animation: wiggle 1s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+
+        @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <h1><span style="color: yellow;">&#9733;</span>단데기<span style="color: yellow;">&#9733;</span>
+</h1>
+    <p><p>&#x1F60A;단데기는 단단해지기를 사용했다!!&#x1F60A;</p>
+
+    <img class="bug-image" src="https://static.wikia.nocookie.net/pokemon/images/7/71/%EB%8B%A8%EB%8D%B0%EA%B8%B0_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest/scale-to-width-down/200?cb=20161125121648&path-prefix=ko" alt="단데기 사진" width="100" height="100">
+    <img class="bug-image" src="https://static.wikia.nocookie.net/pokemon/images/7/71/%EB%8B%A8%EB%8D%B0%EA%B8%B0_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest/scale-to-width-down/200?cb=20161125121648&path-prefix=ko" alt="단데기 사진" width="100" height="100">
+    <img class="bug-image" src="https://static.wikia.nocookie.net/pokemon/images/7/71/%EB%8B%A8%EB%8D%B0%EA%B8%B0_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest/scale-to-width-down/200?cb=20161125121648&path-prefix=ko" alt="단데기 사진" width="100" height="100">
+    <img class="bug-image" src="https://static.wikia.nocookie.net/pokemon/images/7/71/%EB%8B%A8%EB%8D%B0%EA%B8%B0_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest/scale-to-width-down/200?cb=20161125121648&path-prefix=ko" alt="단데기 사진" width="100" height="100">
+    <img class="bug-image" src="https://static.wikia.nocookie.net/pokemon/images/7/71/%EB%8B%A8%EB%8D%B0%EA%B8%B0_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest/scale-to-width-down/200?cb=20161125121648&path-prefix=ko" alt="단데기 사진" width="100" height="100">
+    <img class="bug-image" src="https://static.wikia.nocookie.net/pokemon/images/7/71/%EB%8B%A8%EB%8D%B0%EA%B8%B0_%EA%B3%B5%EC%8B%9D_%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8.png/revision/latest/scale-to-width-down/200?cb=20161125121648&path-prefix=ko" alt="단데기 사진" width="100" height="100">
+
+
+
+    <script>
+        const bugImages = document.querySelectorAll('.bug-image');
+        const body = document.querySelector('body');
+
+        bugImages.forEach((image) => {
+            image.addEventListener('click', () => {
+                const fullscreenImage = document.createElement('img');
+                fullscreenImage.classList.add('fullscreen-image');
+                fullscreenImage.src = image.src;
+
+                fullscreenImage.addEventListener('click', () => {
+                    body.removeChild(fullscreenImage);
+                });
+
+                body.appendChild(fullscreenImage);
+            });
+        });
+    </script>
+</body>
+</html>
